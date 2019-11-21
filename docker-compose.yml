@@ -1,0 +1,32 @@
+version: '3'
+services:
+  backend_api:
+    build: ./src/api
+    depends_on:
+      - redis
+    ports:
+      - 80:80
+    networks:
+      - appnetwork
+    volumes:
+      - ./src/api:/app
+
+  frontend:
+    build: ./src/front
+    volumes:
+      - ./src/front:/app
+    ports:
+      - 4200:4200
+    tty: true
+    networks:
+      - appnetwork
+
+  redis:
+    image: redis
+    ports:
+      - 6379:6379
+    networks:
+      - appnetwork
+
+networks:
+  appnetwork:

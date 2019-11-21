@@ -1,0 +1,6 @@
+[submodule "src/front"]
+	path = src/front
+	url = https://github.com/heptanol/footpaper-frontend.git
+[submodule "src/api"]
+	path = src/api
+	url = https://github.com/heptanol/footpaper-api.git
