@@ -11,15 +11,15 @@ services:
     volumes:
       - ./src/api:/app
 
-  frontend:
-    build: ./src/front
-    volumes:
-      - ./src/front:/app
-    ports:
-      - 4200:4200
-    tty: true
-    networks:
-      - appnetwork
+#  frontend:
+#   build: ./src/front
+#    volumes:
+#      - ./src/front:/app
+#   ports:
+#      - 4200:4200
+#   tty: true
+#    networks:
+#      - appnetwork
 
   redis:
     image: redis
