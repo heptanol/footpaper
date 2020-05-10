@@ -10,6 +10,8 @@ services:
       - 80:80
     networks:
       - appnetwork
+    volumes:
+      - ./src/api:/app
 
   frontend:
     build:
@@ -20,6 +22,8 @@ services:
     tty: true
     networks:
       - appnetwork
+    volumes:
+      - ./src/front:/app
 
   redis:
     image: redis
