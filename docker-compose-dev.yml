@@ -7,7 +7,7 @@ services:
     depends_on:
       - redis
     ports:
-      - 80:80
+      - 8080:80
     networks:
       - appnetwork
     volumes:
@@ -16,7 +16,7 @@ services:
   frontend:
     build:
       context: ./src/front
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
     ports:
       - 4200:4200
     tty: true
